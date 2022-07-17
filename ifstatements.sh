@@ -19,14 +19,14 @@ else
 	echo "The file does not exist"
 fi
 
-command=/usr/bin/htop
+command=htop
 
-if [ $command ]
+if command -v  $command 
 then 
 	echo "$command is available, let's run it..."
 else 
 	echo "$command is NOT available, installing it..."
-	sudo snap install htop
+	sudo apt update && sudo snap install htop # OR install -y $command
 fi
 
 # $command
